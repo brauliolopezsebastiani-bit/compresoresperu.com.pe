@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://compresoresperu.power.com.pe/sitemap.xml

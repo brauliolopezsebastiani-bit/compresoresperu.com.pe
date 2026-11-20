@@ -1,0 +1,51 @@
+WEB COMPRESORES - POWER S.A.C.
+https://compresoresperu.power.com.pe
+Notas para subir y mantener la web.
+
+
+SUBIR LA WEB
+------------
+- Copiar todo el contenido de esta carpeta a la raíz del subdominio.
+- La carpeta "herramientas" no va al servidor (es solo para actualizar modelos).
+- Dejar solo el archivo de configuración que use el servidor:
+    Apache / cPanel (Linux) -> .htaccess
+    Windows (IIS)           -> web.config
+    Netlify / Cloudflare    -> _headers
+- Si en Windows sale "Error 500", borrar web.config.
+- El subdominio tiene que tener SSL (https).
+- No tocar los registros MX del dominio, son los del correo @power.com.pe.
+
+
+FORMULARIO
+----------
+- Envía por Web3Forms a ventas@power.com.pe.
+- La Access Key está en assets/js/main.js (WEB3FORMS_KEY).
+- Si el envío falla, al cliente le aparece la opción de mandar sus datos por WhatsApp.
+- La primera vez revisar spam y marcar el correo como "no es spam".
+
+
+GOOGLE ANALYTICS
+----------------
+- Poner el ID de medición (G-XXXXXXXXXX) en assets/js/analitica.js (GA_ID).
+- Si se deja vacío, no mide nada.
+
+
+GOOGLE SEARCH CONSOLE
+---------------------
+- Registrar el sitio y enviar el sitemap:
+  https://compresoresperu.power.com.pe/sitemap.xml
+
+
+ACTUALIZAR MODELOS
+------------------
+- Los datos de los compresores están en assets/js/main.js (PRODUCTS_BASE).
+- Después de cambiarlos, correr:
+    python3 herramientas/generar_paginas.py
+  Eso vuelve a crear las fichas de cada modelo, el catálogo, la página 404 y el sitemap.
+
+
+DOCUMENTOS
+----------
+- Política de datos personales: assets/docs/politica-de-tratamiento-de-datos-personales.pdf
+- Política del SIG: assets/docs/politica-del-sistema-integrado-de-gestion.pdf
+- Para actualizarlos, reemplazar el PDF con el mismo nombre.
